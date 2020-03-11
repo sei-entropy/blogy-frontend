@@ -5,10 +5,10 @@ class Article extends React.Component {
     return (
       <div className="article">
         {/* Title & Content & Author */}
-        <h2>Title</h2>
-        <sub>Author</sub>
+        <h2>{this.props.title}</h2>
+        <sub>{this.props.author}</sub>
         <p>
-          Content
+          {this.props.content}
         </p>
       </div>
     );
