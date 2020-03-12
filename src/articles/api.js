@@ -8,4 +8,9 @@ const getAllArticles = () => {
   return axios.get(`${apiUrl}/articles`);
 };
 
-export { getAllArticles, };
+// Delete Article by ID
+const deleteArticleByID = (id) => {
+  return axios.delete(`${apiUrl}/articles/${id}`);
+}
+
+export { getAllArticles, deleteArticleByID };
