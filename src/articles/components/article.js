@@ -1,10 +1,13 @@
-import React from 'react';
+import React from "react";
+
+
 
 class Article extends React.Component {
-  deleteArticle = (event) => {
+ 
+  deleteArticle = event => {
     event.preventDefault();
     this.props.deleteArticle(this.props.id);
-  }
+  };
 
   render() {
     return (
@@ -12,13 +15,15 @@ class Article extends React.Component {
         {/* Title & Content & Author */}
         <h2>{this.props.title}</h2>
         <sub>{this.props.author}</sub>
-        <p>
-          {this.props.content}
-        </p>
-        <a href="#" onClick={this.deleteArticle}>Delete</a>
+        <p>{this.props.content}</p>
+        <a href="#" onClick={this.deleteArticle}>
+          Delete
+        </a>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     );
   }
 }
-
 export default Article;

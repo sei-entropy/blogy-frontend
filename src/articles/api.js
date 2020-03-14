@@ -1,5 +1,6 @@
-import apiUrl from '../apiConfig';
-import axios from 'axios';
+import apiUrl from "../apiConfig";
+import apiURL from "../apiConfig";
+import axios from "axios";
 
 // INDEX, SHOW, CREATE, UPDATE, DESTROY
 
@@ -7,10 +8,12 @@ import axios from 'axios';
 const getAllArticles = () => {
   return axios.get(`${apiUrl}/articles`);
 };
+//Delete Article by ID
+const deleteArticleByID = id => {
+  return axios.delete(`${apiURL}/articles/${id}`);
+};
 
-// Delete Article by ID
-const deleteArticleByID = (id) => {
-  return axios.delete(`${apiUrl}/articles/${id}`);
-}
-
-export { getAllArticles, deleteArticleByID };
+const createArticle = () => {
+  return axios.post(`${apiURL}/articles/`);
+};
+export { getAllArticles, deleteArticleByID, createArticle };
