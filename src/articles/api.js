@@ -1,16 +1,55 @@
 import apiUrl from '../apiConfig';
 import axios from 'axios';
 
-// INDEX, SHOW, CREATE, UPDATE, DESTROY
 
-// Get All Articles
-const getAllArticles = () => {
-  return axios.get(`${apiUrl}/articles`);
+// Index , show , create ,update  , destroy
+
+// get all Articles 
+export const getAllArticles = () => {
+
+    return   axios.get(`${apiUrl}/articles`)
+  
 };
 
-// Delete Article by ID
-const deleteArticleByID = (id) => {
-  return axios.delete(`${apiUrl}/articles/${id}`);
+// delete artical by id 
+export const deleteArticleById = (id) => {
+    return axios.delete(`${apiUrl}/articles/${id}`)
 }
 
-export { getAllArticles, deleteArticleByID };
+
+// create artical 
+
+export const addArtical = (Artical) => {
+    console.log("inside add ")
+    return  axios.post(`${apiUrl}/articles` , {
+        Article : {  
+        tital : Artical.tital,
+        content :  Artical.content,
+        author : Artical.author }
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
+
+
+
+export const updateArticalById = (id,newtital ,newauthor ,newcontent) => {
+
+    return axios.patch(`${apiUrl}/articles/${id}` , {
+        Article : {  
+        tital : newtital,
+        content :  newauthor,
+        author : newcontent}
+    })
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    }); 
+}
+

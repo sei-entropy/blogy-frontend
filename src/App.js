@@ -1,33 +1,50 @@
 import React from 'react';
 import './App.css';
-import Articles from './articles/components/articles';
+import Articles from './articles/components/articales'
+import apiURL from './apiConfig';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+export default class App extends React.Component{
+ constructor(props){
+  super(props);
+  this.state = {
+     articles : [ 
+       
+    ],
 
-    this.state = {
-      articles: []
-    };
   }
+  console.log(' MY API URL ', apiURL)
+ }
 
-  setArticles = (articles) => {
-    this.setState({ articles: articles });
-  }
 
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <p>
-            Welcome to Blogy!
-          </p>
-        </header>
-        <Articles articles={this.state.articles}
-                  setArticles={this.setArticles} />
-      </div>
-    );
-  }
+ setArticles = (articles) => {
+   this.setState({
+    articles : articles
+   })
+ }
+
+
+ 
+
+  render(){
+
+  return(
+<div className="App">
+  <header className="App-header">
+  <p> 
+    welcome to Blogy ! 
+  </p>
+
+  </header>
+
+  <Articles  articles={this.state.articles} 
+  setArticles={this.setArticles}/>
+</div>
+  )
 }
 
-export default App;
+
+}
+
+
+
+
