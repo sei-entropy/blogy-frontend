@@ -1,19 +1,21 @@
-API
-  => /api/articles
-  X /api/users
-  X /api/books
-  X ...
-  X ...
 
-Components
-  App State=[Articles]
-    Articles  (List Container)  => MAKE API CALL TO /api/articles
-                                => setState on the APP
-      Article (List Item)
-      
-        Delete Link/Button
+API 
+      /api/Articales 
+      ....
+      .....
 
-State
-  Articles
+Components 
+ App State = [Article] addArticle=() => {}
+...... Articales ( List container )  => Make API call to 
+/api/articles
+=> setState on the App 
 
-Props
+......... Article ( List Item)
+
+          Delete Link/Button 
+
+
+state 
+  Articales 
+
+props 
