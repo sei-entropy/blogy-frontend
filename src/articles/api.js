@@ -13,4 +13,13 @@ const deleteArticleByID = (id) => {
   return axios.delete(`${apiUrl}/articles/${id}`);
 }
 
-export { getAllArticles, deleteArticleByID };
+//Add article 
+const PostArticles = newarticle => {
+  return axios.post(`${apiURL}/articles`, newarticle);
+};
+
+//Update article By ID
+const UpdateArticleById = (id, updatedart) => {
+  return axios.patch(`${apiURL}/articles/${id}`, updatedart);
+};
+export { getAllArticles, deleteArticleByID, PostArticles, UpdateArticleById };
