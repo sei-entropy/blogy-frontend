@@ -15,10 +15,10 @@ class App extends React.Component {
       author: ""
     };
   }
-
   setArticles = articles => {
     this.setState({ articles: articles });
   };
+
   handleAddTitle = e => {
     this.setState({ title: e.target.value });
     console.log(this.state.title);
@@ -33,7 +33,7 @@ class App extends React.Component {
   };
   createnewArticle = e => {
     this.setState({
-      articles: [
+      article: [
         {
           title: this.state.title,
           author: this.state.author,
@@ -46,13 +46,13 @@ class App extends React.Component {
     });
     console.log("Add ");
 
-    createArticle()
-      .then(response => {
-        console.log(`The Article with the ${e} is deleted`);
-      })
-      .catch(error => {
-        console.log("API Error:", Error);
-      });
+    createArticle({
+      article: {
+        title: this.state.title,
+        author: this.state.author,
+        content: this.state.content
+      }
+    });
   };
 
   render() {
@@ -64,9 +64,11 @@ class App extends React.Component {
         <Articles
           articles={this.state.articles}
           setArticles={this.setArticles}
+          title={this.state.title}
+          author={this.state.author}
+          content={this.state.content}
         />
         <AddArticles
-          articles={this.state.articles}
           createnewArticle={this.createnewArticle}
           title={this.state.title}
           author={this.state.author}

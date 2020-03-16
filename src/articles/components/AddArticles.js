@@ -1,8 +1,6 @@
 import React from "react";
 
 class AddArticles extends React.Component {
-
-    
   render() {
     return (
       <div className="article">
@@ -33,7 +31,7 @@ class AddArticles extends React.Component {
         <br></br>
 
         <input
-          type="submit"
+          type="button"
           value="Post"
           onClick={this.props.createnewArticle}
         />
