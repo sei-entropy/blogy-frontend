@@ -17,7 +17,7 @@ const createArticle = article => {
   return axios.post(`${apiURL}/articles/`, article);
 };
 
-const UpdateArticleById = (id, updatedart) => {
-  axios.patch(`${apiURL}/articles/${id}`, updatedart);
+const UpdateArticleById = (id, updateArical) => {
+  axios.patch(`${apiURL}/articles/${id}`, updateArical);
 };
 export { getAllArticles, deleteArticleByID, createArticle, UpdateArticleById };

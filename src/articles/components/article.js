@@ -1,21 +1,30 @@
 import React from "react";
 
 class Article extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: "",
+      content: "",
+      author: ""
+    };
+  }
+  componentWillMount = () => {
+    this.setState({
+      title: this.props.title,
+      content: this.props.content,
+      author: this.props.author
+    });
+  };
   deleteArticle = event => {
     event.preventDefault();
     this.props.deleteArticle(this.props.id);
   };
 
-  updateArticles = event => {
+  UpdateArticle = event => {
     event.preventDefault();
     console.log("update", this.state);
-    this.props.updateArticle(this.props.id, {
-      updatedart: {
-        title: this.props.title,
-        author: this.props.author,
-        content: this.props.content
-      }
-    });
+    this.props.UpdateArticle(this.props.id, this.state);
   };
   render() {
     return (

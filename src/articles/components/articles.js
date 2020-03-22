@@ -33,9 +33,9 @@ class Articles extends React.Component {
     console.log("The Article ID to Update -----", id, stat);
     const newart = {
       article: {
-        title: this.props.title,
-        content: this.props.content,
-        author: this.props.author
+        title: stat.title,
+        content: stat.content,
+        author: stat.author
       }
     };
     UpdateArticleById(id, newart)
